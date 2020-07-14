@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录|社团人事管理系统</title>
+    <link rel="icon" type="image/x-icon" th:href="@{~/src/images/icon.ico}">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" href="./login/css/index.css"rel="styleSheet" />
+</head>
+
+<body>
+    <nav class="bg-primary nav" role="navigation">
+        <div class="nav-wrapper row">
+            <div class="brand-logo center-align col l6 offset-l3">社团人事管理系统</div>
+        </div>
+    </nav>
+    <div class="container row">
+        <div class="card col s12 m6 l4 offset-m3 offset-l4 row" id="main-card">
+            <span class="card-title" id="login-title">登录</span>
+            <form>
+                <div class="input-field">
+                    <select class="icons" >
+                      <option value="SAST" data-icon="/login/image/SAST.png" class="left circle">SAST</option>
+                    </select>
+                    <label>选择社团</label>
+                </div>
+                <div class="input-field" id="userInput">
+                    <input id="userName" name="userName" type="text">
+                    <label for="userName">学号/用户名</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="password" name="password">
+                    <label for="password">密码</label>
+                </div>
+            </form>
+            <button class="btn waves-effect waves-light bg-primary" type="submit">登录
+                <i class="material-icons right">send</i>
+              </button>
+        </div>
+    </div>
+</body>
+<script src="./login/js/index.js"></script>
+</html>

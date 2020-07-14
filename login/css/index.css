@@ -1,0 +1,35 @@
+.bg-primary {
+    background-color: #6777ef !important;
+}
+.primary-color{
+    color: #6777ef !important;
+}
+#logo-container{
+    height: 60px;
+}
+body{
+    background-color: #fcfcfc;
+}
+.nav-wrapper{
+   width: 100%;
+}
+.brand-logo{
+    color: #f6f9fe;
+}
+label::after{
+    width: 60px;
+}
+#main-card{
+    margin-top: 150px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    width: 100%;
+}
+.dropdown-content{
+    color: #6777ef;
+}
