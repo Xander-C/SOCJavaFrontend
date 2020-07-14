@@ -1,0 +1,64 @@
+
+.bg-primary {
+    background-color: #6777ef !important;
+}
+ul .active{
+    background-color: #6777ef !important;
+}
+ul .active a{
+    color: #f6f9fe;
+}
+div span a{
+    font-family: inherit;
+}
+body{
+    background-color: #f6f9fe;
+}
+nav{
+    height: 100px;
+}
+#sn-table{
+    width: 1250px;
+}
+.container{
+    width: 95%;
+}
+.main{
+    padding-left: 300px;
+}
+.side-nav{
+    padding-top: 50px;
+    width: 300px;
+}
+@media only screen and (max-width : 992px) {
+    .main{
+      padding-left: 0;
+    }
+  }
+#logo-container{
+    display: flex;
+    justify-content: center;
+}
+#logo{
+    display: block;
+    height: 120px;
+}
+.brand-logo{
+    margin-left: 2.5%;
+    color: #f6f9fe;
+}
+#name-card{
+    margin-top: -30px;
+    height: 60px;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+#welcome{
+    font-size: 20px;
+    line-height: 22.5px;
+}
+.tips{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}

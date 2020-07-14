@@ -33,3 +33,6 @@ form{
 .dropdown-content{
     color: #6777ef;
 }
+#login-title{
+    margin-bottom: 30px;
+}
