@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>主页|社团人事管理系统</title>
+    <link rel="icon" type="image/x-icon">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://lib.baomitu.com/materialize/0.97.8/js/materialize.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" href="./superAdmin/css/index.css" rel="styleSheet" />
+</head>
+
+<body>
+    <ul id="slide-out" class="side-nav fixed">
+        <li id="logo-container"><img alt="logo" src="./login/image/SAST.png" id="logo"></li>
+        <li class="active"><a href="/index.html">首页</a></li>
+    </ul>
+    <div class="main">
+        <nav class="bg-primary" role="navigation">
+            <div class="nav-wrapper">
+                <div class="brand-logo">社团人事管理系统</div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="card-panel" id="name-card">
+                <div id="welcome">欢迎您，超级管理员</div>
+            </div>
+            <div class="card-panel red tips">
+                <a href="/changepwd" class="white-text">您还未修改默认密码，请点击这里修改。</a>
+            </div>
+            <div class="card" id="m-excel">
+                <span class="card-title">社团信息</span>
+                <table class="striped centered">
+                    <thead>
+                    <tr class="row">
+                        <th class="col l2">社团名称</th>
+                        <th class="col l1">logo</th>
+                        <th class="col l7">介绍</th>
+                        <th class="col l2">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="row">
+                        <td class="col l2">SAST</td>
+                        <td class="col l1"><img src="./login/image/SAST.png" style="height: 18px;"></td>
+                        <td class="col l7">南邮校科协</td>
+                        <td class="col l2"><a class="pwd">重置密码</a><a class="member">查看成员</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="row col l2 offset-l5">
+                        <a class="waves-effect waves-light btn col l10 offset-l1 bg-primary" id="add-btn"><i class="material-icons left">playlist_add</i>增加社团</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./src/backend.js"></script>
+    <script src="./superAdmin/js/index.js"></script>
+</body>
+
+</html>

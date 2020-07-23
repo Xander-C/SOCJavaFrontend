@@ -2,6 +2,9 @@
 .bg-primary {
     background-color: #6777ef !important;
 }
+.primary-color{
+    color: #6777ef !important;
+}
 ul .active{
     background-color: #6777ef !important;
 }
@@ -16,6 +19,15 @@ body{
 }
 nav{
     height: 100px;
+}
+.card{
+    padding: 20px;
+}
+td{
+    height: 22px;
+}
+td img{
+    overflow: hidden;
 }
 #sn-table{
     width: 1250px;
@@ -41,7 +53,8 @@ nav{
 }
 #logo{
     display: block;
-    height: 120px;
+    height: 80px;
+    margin-bottom: 50px;
 }
 .brand-logo{
     margin-left: 2.5%;
@@ -61,4 +74,10 @@ nav{
     margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
+}
+.pwd{
+    margin-right: 10px;
+}
+#add-btn{
+    margin-top: 10px;
 }

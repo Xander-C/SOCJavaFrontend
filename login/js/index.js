@@ -5,3 +5,4 @@ var passwordDom = document.querySelector("#password");
 var passwordLabel = passwordDom.nextElementSibling;
 //passwordDom.setAttribute("class", "invalid");
 //passwordLabel.dataset.error = "用户不存在";
+console.log(backendUrl);
