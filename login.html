@@ -26,8 +26,8 @@
             <span class="card-title" id="login-title">登录</span>
             <form>
                 <div class="input-field">
-                    <select class="icons" >
-                      <option value="SAST" data-icon="/login/image/SAST.png" class="left circle">SAST</option>
+                    <select id="club" class="icons" >
+                      <option value="SAST" data-icon="/login/image/SAST.png" class="left circle">校科协</option>
                       <option value="admin">超级管理员</option>
                     </select>
                     <label>选择社团</label>
@@ -41,12 +41,17 @@
                     <label for="password">密码</label>
                 </div>
             </form>
-            <button class="btn waves-effect waves-light bg-primary" type="submit">登录
+            <button id="submit-btn" class="btn waves-effect waves-light bg-primary" type="submit">登录
                 <i class="material-icons right">send</i>
               </button>
         </div>
     </div>
 </body>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+    </div>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
 <script src="./src/backend.js"></script>
 <script src="./login/js/index.js"></script>
 </html>
