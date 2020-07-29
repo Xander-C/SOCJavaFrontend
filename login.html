@@ -9,6 +9,9 @@
     <link rel="shortcut icon" href="" type="image/x-icon">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://lib.baomitu.com/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
+    <script src="./src/js/backend.js"></script>
+    <script src="./login/js/init.js"></script>
     <script src="https://lib.baomitu.com/materialize/0.97.8/js/materialize.min.js"></script>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,8 +30,7 @@
             <form>
                 <div class="input-field">
                     <select id="club" class="icons" >
-                      <option value="SAST" data-icon="/login/image/SAST.png" class="left circle">校科协</option>
-                      <option value="admin">超级管理员</option>
+                      <option value="admin" id="admin-option">超级管理员</option>
                     </select>
                     <label>选择社团</label>
                 </div>
@@ -55,7 +57,5 @@
     <div class="modal-content">
     </div>
 </div>
-<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
-<script src="./src/js/backend.js"></script>
 <script src="./login/js/index.js"></script>
 </html>

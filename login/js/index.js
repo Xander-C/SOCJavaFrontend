@@ -15,13 +15,11 @@ function check() {
     userNameDom.classList.remove("invalid");
     let temp = true;
     if (userNameDom.value == 0) {
-        userNameDom.setAttribute("class", "invalid");
         userNameLabel.dataset.error = "用户名不能为空";
         userNameLabel.classList.add("active");
         temp = false;
     }
     if (passwordDom.value == 0) {
-        passwordDom.setAttribute("class", "invalid");
         passwordLabel.dataset.error = "密码不能为空";
         passwordLabel.classList.add("active");
         temp = false;
@@ -33,12 +31,19 @@ const submit = () => {
         setTimeout(() => { $('#modal1').modal('close'); }, 500);
         return;
     }
+    let club;
+    try {
+        club = document.querySelector(".select-dropdown li.selected span").innerHTML;
+    } catch (e) {
+        club = "超级管理员";
+    }
+    console.log(club, userNameDom.value, passwordDom.value);
     axios.post(getUrl(`/login/check`), {
-        club: clubDom.text(),
+        club: club,
         name: userNameDom.value,
         password: passwordDom.value
       })
-        .then(function (response) {
+        .then((response)=> {
             if (response.status != 200) {
                 alert("服务器出错");
                 return;
@@ -80,7 +85,7 @@ const submit = () => {
                 $('#modal1').modal('close');
             }
       })
-        .catch(function (error) {
+        .catch((error) => {
             alert("服务器连接失败！");
         console.log(error);
         $('#modal1').modal('close');

@@ -89,3 +89,17 @@ form{
 .modal-content{
     padding: 0;
 }
+.select-dropdown li img{
+    max-width: 40px;
+    max-width: 40px;
+    height: auto;
+    width: auto;
+}
+.select-dropdown li span{
+    color: #6777ef;
+}
+.select-dropdown li{
+    display:flex;
+    align-self:center;
+    flex-direction: row;
+}
