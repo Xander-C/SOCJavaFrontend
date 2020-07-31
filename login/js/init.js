@@ -1,9 +1,12 @@
+let map = new Map();
 axios.get(getUrl(`/login/list`)).then((response) => {
     if (response.status != 200) {
         alert("服务器出错");
         return;
     }
     response.data.forEach(element => {
+        console.log(element);
+        map.set(element.name, element.id);
         console.log(element);
         let option = document.createElement("option");
         option.setAttribute("class", "left circle");
@@ -13,4 +16,5 @@ axios.get(getUrl(`/login/list`)).then((response) => {
         document.querySelector("#club").insertBefore(option, document.querySelector("#admin-option"));
         console.log("append:", option);
     });
+    console.log(map);
 })
