@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <ul id="slide-out" class="side-nav fixed">
         <li id="logo-container"><img alt="logo" src="./login/image/SAST.png" id="logo"></li>
         <li class="active"><a href="/index.html">首页</a></li>
@@ -37,32 +38,28 @@
                 <span class="card-title">社团信息</span>
                 <table class="striped centered">
                     <thead>
-                    <tr class="row">
-                        <th class="col l2">社团名称</th>
-                        <th class="col l1">logo</th>
-                        <th class="col l7">介绍</th>
-                        <th class="col l2">操作</th>
-                    </tr>
+                        <tr class="row">
+                            <th class="col l2">社团名称</th>
+                            <th class="col l1">logo</th>
+                            <th class="col l7">介绍</th>
+                            <th class="col l2">操作</th>
+                        </tr>
                     </thead>
-                    <tbody>
-                    <tr class="row">
-                        <td class="col l2">SAST</td>
-                        <td class="col l1"><img src="./login/image/SAST.png" style="height: 18px;"></td>
-                        <td class="col l7">南邮校科协</td>
-                        <td class="col l2"><a class="pwd">重置密码</a><a class="member">查看成员</a></td>
-                    </tr>
+                    <tbody id="table-body">
+                        <tr is="club-item" v-for="club in clubs" v-bind:key="club.id" v-bind:name="club.name" v-bind:logo="club.logo" v-bind:intro="club.intro"></tr>
                     </tbody>
                 </table>
                 <div class="row">
                     <div class="row col l2 offset-l5">
-                        <a class="waves-effect waves-light btn col l10 offset-l1 bg-primary" id="add-btn"><i class="material-icons left">playlist_add</i>增加社团</a>
+                        <a class="waves-effect waves-light btn col l10 offset-l1 bg-primary" id="add-btn"><i
+                                class="material-icons left">playlist_add</i>增加社团</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
-    <script src="./src/backend.js"></script>
+    <script src="./src/js/backend.js"></script>
     <script src="./superAdmin/js/index.js"></script>
 </body>
 
