@@ -10,7 +10,7 @@ const passwordLabel = passwordDom.nextElementSibling;
 const userNameDom = document.querySelector("#userName");
 const userNameLabel = userNameDom.nextElementSibling;
 const clubDom = $("#club option:selected");
-function check() {
+const check = () => {
     passwordDom.classList.remove("invalid");
     userNameDom.classList.remove("invalid");
     let temp = true;
