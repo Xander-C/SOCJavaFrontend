@@ -42,14 +42,22 @@ td img{
     padding-top: 50px;
     width: 300px;
 }
+.mobile{
+    display: none;
+}
 @media only screen and (max-width : 992px) {
     .main{
       padding-left: 0;
     }
+}
+@media only screen and (max-width : 600px){
+    .mobile{
+        display: block;
+    }
     #display{
         display: none;
     }
-  }
+}
 #logo-container{
     display: flex;
     justify-content: center;
@@ -158,4 +166,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 }
 label::after{
     width: 150px;
+}
+.reset-pwd{
+    margin-right: 10px;
 }

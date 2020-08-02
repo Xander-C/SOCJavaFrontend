@@ -35,27 +35,63 @@
                 <a href="/changepwd" class="white-text">您还未修改默认密码，请点击这里修改。</a>
             </div>
             <div class="row">
-                <div class="col l6 s12 card-container">
+                <div class="col l6 s12 m6 card-container">
                     <div class="card">
                         <span class="card-title">添加社团</span>
                         <div class="row">
-                            <div class="input-field col s12 l6">
-                                <input id="username" type="text">
-                                <label for="username">登录用户名</label>
+                            <div class="input-field col s8 l6">
+                                <input id="add-input" type="text">
+                                <label for="add-input">登录用户名</label>
                             </div>
-                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="add-club-btn">提交</a>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="add-btn">提交</a>
                         </div>
                     </div>
                 </div>
-                <div class="col l6 s12 card-container">
+                <div class="col l6 s12 m6 card-container mobile">
+                    <div class="card">
+                        <span class="card-title">查找社团信息</span>
+                        <div class="row">
+                            <div class="input-field col s8 l6">
+                                <input id="find-input" type="text">
+                                <label for="find-input">社团名称</label>
+                            </div>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="find-btn">提交</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l6 s12 m6 card-container">
                     <div class="card">
                         <span class="card-title">找回社团</span>
                         <div class="row">
-                            <div class="input-field col s12 l6">
-                                <input id="club-id" type="text">
-                                <label for="club-id">社团id</label>
+                            <div class="input-field col s8 l6">
+                                <input id="undo-input" type="text">
+                                <label for="undo-input">社团id</label>
                             </div>
-                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="undo-club-btn">提交</a>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="undo-btn">提交</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l6 s12 m6 card-container mobile">
+                    <div class="card">
+                        <span class="card-title">重置密码</span>
+                        <div class="row">
+                            <div class="input-field col s8 l6">
+                                <input id="reset-input" type="text">
+                                <label for="reset-input">社团id</label>
+                            </div>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="reset-btn">提交</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l6 s12 m6 card-container mobile">
+                    <div class="card">
+                        <span class="card-title">删除社团社团</span>
+                        <div class="row">
+                            <div class="input-field col s8 l6">
+                                <input id="delete-input" type="text">
+                                <label for="delete-input">社团id</label>
+                            </div>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="delete-btn">提交</a>
                         </div>
                     </div>
                 </div>
@@ -65,11 +101,11 @@
                 <table class="striped centered">
                     <thead>
                         <tr class="row">
-                            <th class="col l2">社团名称</th>
-                            <th class="col l2">登录用户名</th>
-                            <th class="col l1">logo</th>
-                            <th class="col l5">介绍</th>
-                            <th class="col l2">操作</th>
+                            <th class="col l2 m2">社团名称</th>
+                            <th class="col l2 m2">登录用户名</th>
+                            <th class="col l1 m1">logo</th>
+                            <th class="col l5 m4">介绍</th>
+                            <th class="col l2 m3">操作</th>
                         </tr>
                     </thead>
                     <tbody id="table-body">
