@@ -26,10 +26,6 @@ axios.get(getUrl(`/community/list`))
 $(document).ready(() => {
     $('.modal').modal();
 });
-const usernameDom = document.querySelector("#add-input");
-const usernameLabel = usernameDom.nextElementSibling;
-const clubIdDom = document.querySelector("#undo-input");
-const clubIdLabel = clubIdDom.nextElementSibling;
 const check = (dom) => {
     let label = dom.nextElementSibling;
     dom.classList.remove("invalid");
@@ -51,15 +47,10 @@ const unknowError = () => {
     $('#confirm-content').html(`请联系管理员`);
     $('#confirm').modal('open');
 }
-
-const addClub = () => {
-    let dom = document.querySelector("#add-input");
+const postData = (dom, url, data, confirmTitle, confirmContent) => {
     if (!check(dom)) return;
     $('#loading').modal('open');
-    axios.post(getUrl(`/community/add`), {
-            username: dom.value,
-            password: "12345678"
-        })
+    axios.post(getUrl(url), data)
         .then((response) => {
             $('#loading').modal('close');
             console.log(response);
@@ -68,40 +59,8 @@ const addClub = () => {
                 return;
             }
             if (response.data) {
-                $('#confirm-title').html("添加成功");
-                $('#confirm-content').html(`已添加用户${dom.value}，默认登录密码为：12345678`);
-                $('#confirm').modal('open');
-                dom.value = null;
-                dom.nextElementSibling.classList.remove("active");
-            } else {
-                console.log(response);
-                unknowError();
-            }
-        })
-        .catch((error) => {
-            $('#loading').modal('close');
-            console.log(error);
-            unknowError();
-        })
-}
-
-const undoClub = () => {
-    let dom = document.querySelector("#undo-input");
-    if (!check(dom)) return;
-    $('#loading').modal('open');
-    axios.post(getUrl(`/community/undo`), {
-            id: dom.value
-        })
-        .then((response) => {
-            $('#loading').modal('close');
-            console.log(response);
-            if (response.status != 200) {
-                window.location = "/login.html";
-                return;
-            }
-            if (response.data) {
-                $('#confirm-title').html("找回成功");
-                $('#confirm-content').html(`已找回社团${dom.value}`);
+                $('#confirm-title').html(confirmTitle);
+                $('#confirm-content').html(confirmContent);
                 $('#confirm').modal('open');
                 dom.value = null;
                 dom.nextElementSibling.classList.remove("active");
@@ -117,8 +76,15 @@ const undoClub = () => {
         })
 }
 document.querySelector("#add-btn").addEventListener("click", () => {
-    addClub();
+    let dom = document.querySelector("#add-input");
+    postData(dom, "/community/add", {
+        username: dom.value,
+        password: "12345678"
+    }, "添加成功", `已添加用户${dom.value}，默认登录密码为：12345678。`);
 });
 document.querySelector("#undo-btn").addEventListener("click", () => {
-    undoClub();
+    let dom = document.querySelector("#undo-input");
+    postData(dom, "/community/undo", {
+        id: dom.value
+    }, "找回成功", `已找回社团:${dom.value}(id)。`);
 });
