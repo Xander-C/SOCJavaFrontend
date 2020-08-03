@@ -91,7 +91,7 @@
                                 <input id="delete-input" type="text">
                                 <label for="delete-input">社团id</label>
                             </div>
-                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="delete-btn">提交</a>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="delete-confirm-btn">提交</a>
                         </div>
                     </div>
                 </div>
@@ -119,6 +119,15 @@
         </div>
     </div>
 
+    <div id="delete-confirm" class="modal">
+        <div class="modal-content">
+            <h4>删除社团</h4>
+            <p id="delete-confirm-content">确认删除社团？</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="delete-btn">确认</a>
+        </div>
+    </div>
     <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
     <script src="./src/js/backend.js"></script>
     <script src="./superAdmin/js/index.js"></script>

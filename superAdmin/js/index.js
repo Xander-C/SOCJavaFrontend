@@ -88,3 +88,23 @@ document.querySelector("#undo-btn").addEventListener("click", () => {
         id: dom.value
     }, "找回成功", `已找回社团:${dom.value}(id)。`);
 });
+document.querySelector("#reset-btn").addEventListener("click", () => {
+    let dom = document.querySelector("#reset-input");
+    postData(dom, "/resetPwd", {
+        id: dom.value,
+        newPwd: 12345678,
+        type: 0
+    }, "重置成功", `已将社团:${dom.value}(id)密码重置为12345678。`);
+});
+document.querySelector("#delete-btn").addEventListener("click", () => {
+    let dom = document.querySelector("#delete-input");
+    postData(dom, "/community/delete", {
+        id: dom.value
+    }, "删除成功", `已删除社团:${dom.value}(id)。`);
+});
+document.querySelector("#delete-confirm-btn").addEventListener("click", () => {
+    let dom = document.querySelector("#delete-input");
+    if (!check(dom)) return;
+    document.querySelector("#delete-confirm-content").innerHTML = `确认删除id为${dom.value}的社团？`;
+    $("#delete-confirm").modal("open");
+})
