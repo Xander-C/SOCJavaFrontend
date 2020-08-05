@@ -101,16 +101,17 @@
                 <table class="striped centered">
                     <thead>
                         <tr class="row">
-                            <th class="col l2 m2">社团名称</th>
+                            <th class="col l1 m2">社团名称</th>
+                            <th class="col l1 m1">id</th>
                             <th class="col l2 m2">登录用户名</th>
                             <th class="col l1 m1">logo</th>
-                            <th class="col l5 m4">介绍</th>
+                            <th class="col l5 m3">介绍</th>
                             <th class="col l2 m3">操作</th>
                         </tr>
                     </thead>
                     <tbody id="table-body">
                         <tr is="club-item" v-for="club in clubs" v-bind:key="club.id" v-bind:name="club.name"
-                            v-bind:username="club.username" v-bind:logo="club.logo" v-bind:intro="club.intro"></tr>
+                            v-bind:username="club.username" v-bind:logo="club.logo" v-bind:intro="club.intro" v-bind:id="club.id"></tr>
                     </tbody>
                 </table>
                 <!-- <a class="waves-effect waves-light btn bg-primary" id="add-btn" href="#add-modal"><i
@@ -128,37 +129,38 @@
             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="delete-btn">确认</a>
         </div>
     </div>
+    <div id="loading" class="modal">
+        <div class="load4">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+    <div id="confirm" class="modal">
+        <div class="modal-content">
+            <h4 id="confirm-title"></h4>
+            <p id="confirm-content"></p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="confirm-btn">确认</a>
+        </div>
+    </div>
+    <div id="search-result-modal" class="modal">
+        <div class="modal-content">
+            <h4>搜索结果</h4>
+            <p>名称：<span id="result-name">xxx</span></p>
+            <p>id：<span id="result-id">xxx</span></p>
+            <p>logo：<img id="result-logo" class="responsive-img circle" src="./login/image/SAST.png" style="height: 20px;">
+            </p>
+            <p>介绍：<span id="result-intro">xxx</span></p>
+            <p>登录用户名：<span id="result-username">xxx</span></p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">确认</a>
+        </div>
+    </div>
     <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
     <script src="./src/js/backend.js"></script>
     <script src="./superAdmin/js/index.js"></script>
 </body>
-<div id="loading" class="modal">
-    <div class="load4">
-        <div class="cube1"></div>
-        <div class="cube2"></div>
-    </div>
-</div>
-<div id="confirm" class="modal">
-    <div class="modal-content">
-        <h4 id="confirm-title"></h4>
-        <p id="confirm-content"></p>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">确认</a>
-    </div>
-</div>
-<div id="search-result-modal" class="modal">
-    <div class="modal-content">
-        <h4>搜索结果</h4>
-        <p>名称：<span id="result-name">xxx</span></p>
-        <p>id：<span id="result-id">xxx</span></p>
-        <p>logo：<img id="result-logo" class="responsive-img circle" src="./login/image/SAST.png" style="height: 20px;"></p>
-        <p>介绍：<span id="result-intro">xxx</span></p>
-        <p>登录用户名：<span id="result-username">xxx</span></p>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">确认</a>
-    </div>
-</div>
 
 </html>

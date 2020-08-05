@@ -1,6 +1,9 @@
+$(document).ready(() => {
+    $('.modal').modal();
+});
 Vue.component('club-item', {
-    props: ['name', 'logo', 'intro', 'username'],
-    template: '<tr class="row"><td class="col l2 m2">{{ name }}</td><td class="col l2 m2">{{ username }}</td><td class="col l1 m1"><img :src=logo style="height: 18px;"></td><td class="col l5 m4">{{ intro }}</td><td class="col l2 m3"><a class="reset-pwd">重置密码</a><a>删除社团</a></td></tr>'
+    props: ['name', 'logo', 'intro', 'username', 'id'],
+    template: '<tr class="row"><td class="col l1 m2">{{ name }}</td><td class="col l1 m1">{{ id }}</td><td class="col l2 m2">{{ username }}</td><td class="col l1 m1"><img :src=logo style="height: 18px;"></td><td class="col l5 m3">{{ intro }}</td><td class="col l2 m3"><a class="reset-pwd" href="#!" :data-id=id>重置密码</a><a href="#!" :data-id=id class="delete-club">删除社团</a></td></tr>'
 });
 let data;
 axios.get(getUrl(`/community/list`))
@@ -17,15 +20,23 @@ axios.get(getUrl(`/community/list`))
                 clubs: data
             }
         });
+        document.querySelectorAll(".reset-pwd").forEach(Element => {
+            Element.addEventListener("click", () => {
+                document.querySelector("#reset-input").value = Element.dataset.id;
+                document.querySelector("#reset-btn").click();
+            })
+        })
+        document.querySelectorAll(".delete-club").forEach(Element => {
+            Element.addEventListener("click", () => {
+                document.querySelector("#delete-input").value = Element.dataset.id;
+                document.querySelector("#delete-confirm-btn").click();
+            })
+        })
     })
+        
     .catch((error) => {
         console.log(error);
     })
-
-
-$(document).ready(() => {
-    $('.modal').modal();
-});
 const check = (dom) => {
     let label = dom.nextElementSibling;
     dom.classList.remove("invalid");
@@ -112,7 +123,9 @@ document.querySelector("#search-btn").addEventListener("click", () => {
     let dom = document.querySelector("#search-input");
     if (!check(dom)) return;
     $('#loading').modal('open');
-    axios.get(getUrl('/community/search'), { comName: dom.value }).then((response) => {
+    axios.get(getUrl('/community/search'), {
+        comName: dom.value
+    }).then((response) => {
         console.log(response);
         if (response.status != 200) {
             unknowError();
@@ -131,5 +144,8 @@ document.querySelector("#search-btn").addEventListener("click", () => {
         console.log(error);
         unknowError();
     })
-    $("#search-result-modal").modal("open"); 
+    $("#search-result-modal").modal("open");
+});
+document.querySelector("#confirm-btn").addEventListener("click", () => {
+    if (document.querySelector("#confirm-title").innerHTML == "删除成功") location.reload();
 });
