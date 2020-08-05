@@ -52,10 +52,10 @@
                         <span class="card-title">查找社团信息</span>
                         <div class="row">
                             <div class="input-field col s8 l6">
-                                <input id="find-input" type="text">
-                                <label for="find-input">社团名称</label>
+                                <input id="search-input" type="text">
+                                <label for="search-input">社团名称</label>
                             </div>
-                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="find-btn">提交</a>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="search-btn">提交</a>
                         </div>
                     </div>
                 </div>
@@ -142,6 +142,19 @@
     <div class="modal-content">
         <h4 id="confirm-title"></h4>
         <p id="confirm-content"></p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">确认</a>
+    </div>
+</div>
+<div id="search-result-modal" class="modal">
+    <div class="modal-content">
+        <h4>搜索结果</h4>
+        <p>名称：<span id="result-name">xxx</span></p>
+        <p>id：<span id="result-id">xxx</span></p>
+        <p>logo：<img id="result-logo" class="responsive-img circle" src="./login/image/SAST.png" style="height: 20px;"></p>
+        <p>介绍：<span id="result-intro">xxx</span></p>
+        <p>登录用户名：<span id="result-username">xxx</span></p>
     </div>
     <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">确认</a>

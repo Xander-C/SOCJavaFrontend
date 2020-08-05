@@ -55,7 +55,7 @@ const postData = (dom, url, data, confirmTitle, confirmContent) => {
             $('#loading').modal('close');
             console.log(response);
             if (response.status != 200) {
-                window.location = "/login.html";
+                unknowError();
                 return;
             }
             if (response.data) {
@@ -107,4 +107,29 @@ document.querySelector("#delete-confirm-btn").addEventListener("click", () => {
     if (!check(dom)) return;
     document.querySelector("#delete-confirm-content").innerHTML = `确认删除id为${dom.value}的社团？`;
     $("#delete-confirm").modal("open");
-})
+});
+document.querySelector("#search-btn").addEventListener("click", () => {
+    let dom = document.querySelector("#search-input");
+    if (!check(dom)) return;
+    $('#loading').modal('open');
+    axios.get(getUrl('/community/search'), { comName: dom.value }).then((response) => {
+        console.log(response);
+        if (response.status != 200) {
+            unknowError();
+            return;
+        }
+        let club = response.data;
+        document.querySelector("#result-name").innerHTML = club.name;
+        document.querySelector("#result-id").innerHTML = club.id;
+        document.querySelector("#result-logo").setAttribute("src", club.logo);
+        document.querySelector("#result-intro").innerHTML = club.intro;
+        document.querySelector("#result-username").innerHTML = club.username;
+        $('#loading').modal('close');
+        $('#search-result-modal').modal('open');
+    }).catch((error) => {
+        $('#loading').modal('close');
+        console.log(error);
+        unknowError();
+    })
+    $("#search-result-modal").modal("open"); 
+});
