@@ -33,8 +33,11 @@ axios.get(getUrl(`/community/list`))
             })
         })
     })
-        
+
     .catch((error) => {
+        $('#confirm-title').html("加载失败");
+        $('#confirm-content').html("无法连接后端服务器，请联系管理员。");
+        $('#confirm').modal('open');
         console.log(error);
     })
 const check = (dom) => {
