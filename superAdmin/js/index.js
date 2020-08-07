@@ -39,6 +39,9 @@ axios.get(getUrl(`/community/list`))
         $('#confirm-content').html("无法连接后端服务器，请联系管理员。");
         $('#confirm').modal('open');
         console.log(error);
+        document.querySelector("#confirm-btn").addEventListener("click", () => {
+            location.reload();
+        })
     })
 const check = (dom) => {
     let label = dom.nextElementSibling;
