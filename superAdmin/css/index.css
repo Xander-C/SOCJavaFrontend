@@ -1,25 +1,4 @@
 
-.bg-primary {
-    background-color: #6777ef !important;
-}
-.primary-color{
-    color: #6777ef !important;
-}
-ul .active{
-    background-color: #6777ef !important;
-}
-ul .active a{
-    color: #f6f9fe;
-}
-div span a{
-    font-family: inherit;
-}
-body{
-    background-color: #f6f9fe;
-}
-nav{
-    height: 100px;
-}
 .card{
     padding: 20px;
 }
@@ -32,23 +11,8 @@ td img{
 #sn-table{
     width: 1250px;
 }
-.container{
-    width: 95%;
-}
-.main{
-    padding-left: 300px;
-}
-.side-nav{
-    padding-top: 50px;
-    width: 300px;
-}
 .mobile{
     display: none;
-}
-@media only screen and (max-width : 992px) {
-    .main{
-      padding-left: 0;
-    }
 }
 @media only screen and (max-width : 600px){
     .mobile{
@@ -58,93 +22,12 @@ td img{
         display: none;
     }
 }
-#logo-container{
-    display: flex;
-    justify-content: center;
-}
-#logo{
-    display: block;
-    height: 80px;
-    margin-bottom: 50px;
-}
-.brand-logo{
-    margin-left: 2.5%;
-    color: #f6f9fe;
-}
-#name-card{
-    margin-top: -30px;
-    height: 60px;
-    padding-left: 10px;
-    border-radius: 5px;
-}
-#welcome{
-    font-size: 20px;
-    line-height: 22.5px;
-}
-.tips{
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
-}
 .pwd{
     margin-right: 10px;
 }
 #add-btn{
     margin-top: 10px;
 }
-#loading{
-    width: 125px;
-    height: 125px;
-    top: 25%;
-}
-.load4 {
-    margin-top: 25px;
-    margin-left: 25px;
-    width: 32px;
-    height: 32px;
-    position: relative;
-}
-.cube1, .cube2 {
-    background-color: #6777ef;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-animation: cubemove 1.8s infinite ease-in-out;
-    animation: cubemove 1.8s infinite ease-in-out;
-}
-.cube2 {
-    -webkit-animation-delay: -0.9s;
-    animation-delay: -0.9s;
-}
-@-webkit-keyframes cubemove {
-    25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
-    50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
-    75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
-    100% { -webkit-transform: rotate(-360deg) }
-}
-@keyframes cubemove {
-    25% {
-        transform: translateX(42px) rotate(-90deg) scale(0.5);
-        -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
-    } 50% {
-        transform: translateX(42px) translateY(42px) rotate(-179deg);
-        -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
-    } 50.1% {
-        transform: translateX(42px) translateY(42px) rotate(-180deg);
-        -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
-    } 75% {
-        transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-      -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
-    } 100% {
-        transform: rotate(-360deg);
-        -webkit-transform: rotate(-360deg);
-    }
-}
-#loading .modal-content{
-    padding: 0;
- }
 /* .card-container{
     margin: 0, 0.75rem;
 } */
@@ -156,16 +39,6 @@ td img{
 }
 .row{
     margin-bottom: 0;
-}
-input:not([type]):focus:not([readonly])+label, input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=url]:focus:not([readonly])+label, input[type=time]:focus:not([readonly])+label, input[type=date]:focus:not([readonly])+label, input[type=datetime]:focus:not([readonly])+label, input[type=datetime-local]:focus:not([readonly])+label, input[type=tel]:focus:not([readonly])+label, input[type=number]:focus:not([readonly])+label, input[type=search]:focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label {
-    color: #6777ef;
-}
-input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #6777ef;
-    box-shadow: 0 1px 0 0 #6777ef;
-}
-label::after{
-    width: 150px;
 }
 .reset-pwd{
     margin-right: 10px;
