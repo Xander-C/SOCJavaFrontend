@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>主页|社团人事管理系统</title>
+    <link rel="icon" type="image/x-icon">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://lib.baomitu.com/materialize/0.97.8/js/materialize.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" href="./src/css/index.css" rel="styleSheet" />
+    <link type="text/css" href="./department/css/index.css" rel="styleSheet" />
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <ul id="slide-out" class="side-nav fixed">
+        <li id="logo-container"><img alt="logo" src="./login/image/SAST.png" id="logo"></li>
+        <li class="active"><a href="/index.html">首页</a></li>
+        <li><a href="/index.html">活动分发</a></li>
+    </ul>
+    <div class="main">
+        <nav class="bg-primary" role="navigation">
+            <div class="nav-wrapper">
+                <div class="brand-logo">社团人事管理系统</div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="card-panel" id="name-card">
+                <div id="welcome">欢迎您，超级管理员</div>
+            </div>
+            <div class="card-panel red tips">
+                <a href="/changepwd" class="white-text">您还未修改默认密码，请点击这里修改。</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="loading" class="modal">
+        <div class="load4">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+    <div id="confirm" class="modal">
+        <div class="modal-content">
+            <h4 id="confirm-title"></h4>
+            <p id="confirm-content"></p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="confirm-btn">确认</a>
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
+    <script src="./src/js/backend.js"></script>
+    <script src="./department/js/index.js"></script>
+</body>
+
+</html>
