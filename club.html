@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>主页|社团人事管理系统</title>
+    <link rel="icon" type="image/x-icon">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://lib.baomitu.com/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://lib.baomitu.com/materialize/0.97.8/js/materialize.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" href="./src/css/index.css" rel="styleSheet" />
+    <link type="text/css" href="./club/css/index.css" rel="styleSheet" />
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <ul id="slide-out" class="side-nav fixed">
+        <li id="logo-container"><img alt="logo" src="./login/image/SAST.png" id="logo"></li>
+        <li class="active"><a href="/index.html">首页</a></li>
+    </ul>
+    <div class="main">
+        <nav class="bg-primary" role="navigation">
+            <div class="nav-wrapper">
+                <div class="brand-logo">社团人事管理系统</div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="card-panel" id="name-card">
+                <div id="welcome">欢迎您，社团管理员</div>
+            </div>
+            <div class="card-panel red tips">
+                <a href="/changepwd" class="white-text">您还未修改默认密码，请点击这里修改。</a>
+            </div>
+            <div class="row">
+                <div class="col l6 s12 m6 card-container">
+                    <div class="card">
+                        <span class="card-title">添加部门</span>
+                        <div class="row">
+                            <div class="input-field col s8 l6">
+                                <input id="add-input" type="text">
+                                <label for="add-input">登录用户名</label>
+                            </div>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="add-btn">提交</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l6 s12 m6 card-container mobile">
+                    <div class="card">
+                        <span class="card-title">查找部门信息</span>
+                        <div class="row">
+                            <div class="input-field col s8 l6">
+                                <input id="search-input" type="text">
+                                <label for="search-input">部门名称</label>
+                            </div>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="search-btn">提交</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l6 s12 m6 card-container">
+                    <div class="card">
+                        <span class="card-title">找回部门</span>
+                        <div class="row">
+                            <div class="input-field col s8 l6">
+                                <input id="undo-input" type="text">
+                                <label for="undo-input">社团id</label>
+                            </div>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="undo-btn">提交</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l6 s12 m6 card-container mobile">
+                    <div class="card">
+                        <span class="card-title">重置密码</span>
+                        <div class="row">
+                            <div class="input-field col s8 l6">
+                                <input id="reset-input" type="text">
+                                <label for="reset-input">社团id</label>
+                            </div>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="reset-btn">提交</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l6 s12 m6 card-container mobile">
+                    <div class="card">
+                        <span class="card-title">删除社团</span>
+                        <div class="row">
+                            <div class="input-field col s8 l6">
+                                <input id="delete-input" type="text">
+                                <label for="delete-input">社团id</label>
+                            </div>
+                            <a class="btn bg-primary waves-effect waves-light submit-btn" id="delete-confirm-btn">提交</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="display">
+                <span class="card-title">部门信息</span>
+                <table class="striped centered">
+                    <thead>
+                        <tr class="row">
+                            <th class="col l2 m2">部门名称</th>
+                            <th class="col l2 m2">id</th>
+                            <th class="col l2 m2">登录用户名</th>
+                            <th class="col l6 m6">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr is="club-item" v-for="club in clubs" v-bind:key="club.id" v-bind:name="club.name"
+                            v-bind:username="club.username" v-bind:id="club.comId"></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="loading" class="modal">
+            <div class="load4">
+                <div class="cube1"></div>
+                <div class="cube2"></div>
+            </div>
+        </div>
+        <div id="confirm" class="modal">
+            <div class="modal-content">
+                <h4 id="confirm-title"></h4>
+                <p id="confirm-content"></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="confirm-btn">确认</a>
+            </div>
+        </div>
+        <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
+        <script src="./src/js/backend.js"></script>
+        <script src="./club/js/index.js"></script>
+</body>
+
+</html>
