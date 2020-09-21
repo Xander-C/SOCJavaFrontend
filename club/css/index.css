@@ -1,0 +1,42 @@
+
+.card{
+    padding: 20px;
+}
+td{
+    height: 22px;
+}
+td img{
+    overflow: hidden;
+}
+#sn-table{
+    width: 1250px;
+}
+.mobile{
+    display: none;
+}
+@media only screen and (max-width : 600px){
+    .mobile{
+        display: block;
+    }
+    #display{
+        display: none;
+    }
+}
+.pwd{
+    margin-right: 10px;
+}
+#add-btn{
+    margin-top: 10px;
+}
+.card-container .card{
+    margin-bottom: 10px;
+}
+.submit-btn{
+    margin-top: 20px;
+}
+.row{
+    margin-bottom: 0;
+}
+.reset-pwd{
+    margin-right: 10px;
+}

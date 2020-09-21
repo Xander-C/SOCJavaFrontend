@@ -7,7 +7,8 @@ axios.get(getUrl(`/login/list`)).then((response) => {
         alert("服务器出错");
         return;
     }
-    response.data.forEach(element => {
+    console.log(response);
+    response.data.data.forEach(element => {
         console.log(element);
         map.set(element.name, element.id);
         console.log(element);

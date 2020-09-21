@@ -40,6 +40,7 @@ const submit = () => {
         club = "超级管理员";
     }
     console.log(map.get(club) || 1, userNameDom.value, passwordDom.value);
+    axios.defaults.withCredentials = true;
     axios.post(getUrl(`/login/check`), {
         club: map.get(club) || 1 ,
         name: userNameDom.value,
