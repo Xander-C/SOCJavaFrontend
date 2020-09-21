@@ -19,6 +19,7 @@ axios.get(getUrl(`/login/list`)).then((response) => {
         option.appendChild(textNode);
         document.querySelector("#club").insertBefore(option, document.querySelector("#admin-option"));
         console.log("append:", option);
+        $('select').material_select();
     });
     console.log(map);
 }).catch((error) => {
